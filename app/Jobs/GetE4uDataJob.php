@@ -72,7 +72,9 @@ class GetE4uDataJob implements ShouldQueue
             $user->status_id = $status->id;
             $user->save();
 
-            $presentContacts[array_search($channel->value, $presentContacts)] = null;
+            if (array_search($channel->value, $presentContacts) !== false) {
+                $presentContacts[array_search($channel->value, $presentContacts)] = null;
+            }
         });
 
         /** @var DiscordChannel $discordChannel */
