@@ -78,7 +78,7 @@ class GetE4uDataJob implements ShouldQueue
         });
 
         /** @var DiscordChannel $discordChannel */
-        $discordChannel = DiscordChannel::where('name', 'precense-updates')->first();
+        $discordChannel = DiscordChannel::where('name', 'unknown-ids')->first();
         foreach ($presentContacts as $presentContact) {
             if (!$presentContact) {
                 continue;
